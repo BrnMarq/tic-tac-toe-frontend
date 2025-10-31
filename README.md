@@ -1,73 +1,99 @@
-# Welcome to your Lovable project
+# Tic-Tac-Toe Online - Frontend
 
-## Project info
+This is the frontend for a real-time multiplayer Tic-Tac-Toe game. It's built with React, Vite, and TypeScript, and uses Socket.IO for communication with the backend server. The UI is crafted using the excellent [shadcn/ui](https://ui.shadcn.com/) component library and styled with [Tailwind CSS](https://tailwindcss.com/).
 
-**URL**: https://lovable.dev/projects/798eeb19-54ef-4f88-9258-dd41c1222334
+## ✨ Features
 
-## How can I edit this code?
+- **Real-time Gameplay**: Play Tic-Tac-Toe with another player in real-time.
+- **Game Lobby**: View a list of available game rooms to join.
+- **Create & Join Rooms**: Easily create your own game room or join an existing one.
+- **Modern UI**: A clean, responsive, and modern user interface.
+- **Form Handling**: Robust form validation using React Hook Form and Zod.
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Framework**: [React](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Real-time Communication**: [Socket.IO Client](https://socket.io/docs/v4/client-api/)
+- **Form Management**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/798eeb19-54ef-4f88-9258-dd41c1222334) and start prompting.
+## 🚀 Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+Follow these instructions to get the frontend development server up and running on your local machine.
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- [Node.js](https://nodejs.org/) (v18 or newer recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation & Setup
 
-Follow these steps:
+1.  **Clone the repository** (if you haven't already):
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+    ```bash
+    git clone <your-repository-url>
+    cd <your-repository-folder>
+    ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2.  **Install dependencies**:
 
-# Step 3: Install the necessary dependencies.
-npm i
+    ```bash
+    npm install
+    ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3.  **Set up environment variables**:
+
+    Create a `.env` file in the `frontend` directory by copying the example file:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Open the `.env` file and set the `VITE_BACKEND_URL` to the address of your running backend server.
+
+    ```env
+    # .env
+    VITE_BACKEND_URL=http://localhost:3000
+    ```
+
+4.  **Run the development server**:
+
+    ```bash
+    npm run dev
+    ```
+
+    The application should now be running and accessible at `http://localhost:8080` (or another port if 8080 is in use).
+
+## 📜 Available Scripts
+
+In the `frontend` directory, you can run the following scripts:
+
+- **`npm run dev`**
+  Starts the development server with Hot Module Replacement (HMR).
+
+- **`npm run build`**
+  Builds the app for production to the `dist` folder.
+
+- **`npm run lint`**
+  Lints the codebase using ESLint to find and fix problems.
+
+- **`npm run preview`**
+  Serves the production build locally to preview it before deployment.
+
+## 📁 Project Structure
+
+The `src` folder is organized as follows:
+
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/798eeb19-54ef-4f88-9258-dd41c1222334) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+src/
+├── components/   # Reusable UI components (buttons, inputs, etc.)
+├── contexts/     # React contexts for global state
+├── hooks/        # Custom React hooks
+├── lib/          # Utility functions and library configurations
+├── pages/        # Top-level page components for routing
+├── App.jsx       # Main application component with router setup
+└── main.jsx      # Entry point of the application
+```
